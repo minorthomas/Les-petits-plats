@@ -1,0 +1,39 @@
+*::first-letter {
+    text-transform: uppercase;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1200px;
+
+    a {
+        text-decoration: none;
+        color: $black;
+        display: block;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+    }
+
+    ul {
+        li {
+            list-style: none;
+        }
+    }
+}
+
+//remove cross for search input
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
