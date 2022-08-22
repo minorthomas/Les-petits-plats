@@ -17,12 +17,16 @@
             gap: 0.5em;
             padding: 0.5em 1em;
             background-color: $blue;
-            border-radius: 0.5em;
+            border-radius: 0.3em;
             color: white;
 
             p {
                 font-size: 0.9em;
                 margin: 0;
+            }
+
+            i {
+                cursor: pointer;
             }
         }
 
@@ -36,6 +40,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1em;
+        cursor: pointer;
 
         &_form {
             display: none;
@@ -46,7 +51,7 @@
             width: 10em;
             // width: 41.6em;
             height: 3.9em;
-            border-radius: 0.5em;
+            border-radius: 0.3em;
 
             @include device-size(large) {
                 display: flex;
