@@ -4,7 +4,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1em;
-    margin-top: 4em;
+    margin: 4em 0;
 
     &_card {
         display: flex;
@@ -38,21 +38,23 @@
                 justify-content: space-between;
                 gap: 1em;
                 align-items: flex-start;
-                padding: 1em 1em 0 1em;
+                padding: 1em 1em 0 0.8em;
 
                 &_title {
                     font-size: 1em;
                     max-width: 70%;
                     margin: 0;
+                    font-weight: $bold;
                 }
 
                 &_time {
                     display: flex;
                     gap: 0.2em;
+                    align-items: center;
 
                     p {
-                        font-weight: bold;
-                        font-size: 0.85em;
+                        font-weight: $bold;
+                        font-size: 1em;
                         margin: 0;
                     }
                 }
@@ -64,7 +66,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-                font-size: 12px;
+                font-size: 0.8em;
                 gap: 0.5em;
                 padding: 0 1em 1em 1em;
 
@@ -79,21 +81,28 @@
                         padding: 0;
                         margin: 0;
 
-                        strong {
-                            display: inline;
-                            font-weight: bold;
+                        li {
+                            font-weight: $regular;
+
+                            strong {
+                                display: inline;
+                                font-weight: $bold;
+                            }
                         }
+
                     }
                 }
 
                 &_instructions {
                     width: 50%;
-                    margin: 0;
+                    margin-bottom: 0.5em;
+                    font-family: $roboto;
                     text-overflow: ellipsis;
                     overflow: hidden;
                     display: -webkit-box;
                     -webkit-line-clamp: 6;
                     -webkit-box-orient: vertical;
+
                 }
             }
         }
