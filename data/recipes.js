@@ -728,7 +728,7 @@ const recipes = [
         "quantity": 1
       }
     ],
-    "time": 0,
+    "time": 8,
     "description": "Coupez les fruits en morceaux, ajouter le jus de citron et le lait ainsi que le sucre glace. Mixez. Ajoutez des glaçons si le lait n'a pas été mis au frais.",
     "appliance": "Blender",
     "ustensils": [
@@ -1852,7 +1852,7 @@ const recipes = [
         "unit": "CàS"
       }
     ],
-    "time": 0,
+    "time": 8,
     "description": "Découper les fruits. Le passer au blender jusqu'à obtenir une texture liquide. Mettre au frais. Servir",
     "appliance": "Blender",
     "ustensils": [

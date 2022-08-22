@@ -31,6 +31,18 @@
             }
         }
 
+        &_tag-blue {
+            background-color: $blue;
+        }
+
+        &_tag-green {
+            background-color: $green;
+        }
+
+        &_tag-red {
+            background-color: $red;
+        }
+
         @include device-size(large) {
             display: flex;
         }
@@ -41,7 +53,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1em;
-        cursor: pointer;
 
         &_form {
             display: none;
@@ -53,6 +64,7 @@
             // width: 41.6em;
             height: 3.9em;
             border-radius: 0.3em;
+            cursor: pointer;
 
             @include device-size(large) {
                 display: flex;
