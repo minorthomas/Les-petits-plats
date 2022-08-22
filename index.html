@@ -45,43 +45,47 @@
                 <p>Noix de coco</p>
                 <i class="fa-regular fa-circle-xmark fa-lg"></i>
             </li>
+            <li class="search_selectedtags_tag">
+                <p>Noix de coco</p>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </li>
+            <li class="search_selectedtags_tag">
+                <p>Noix de coco</p>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </li>
+            <li class="search_selectedtags_tag">
+                <p>Noix de coco</p>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </li>
         </ul>
         <!--Search with tags and user input-->
         <div class="search_tags">
-            <!--Search ingredients-->
-            <form class="search_tags_form" role="search">
+            <!--Search by ingredients-->
+            <form class="search_tags_form search_tags_form-blue" role="search">
                 <input type="search" max-length="75" id="ingredients"
                     class="search_tags_form_input search_tags_form_input-blue"
                     aria-label="Champ de recherche des ingrédients" name="ingredients" placeholder="Ingrédients" />
                 <i class="fa-solid fa-chevron-down"></i>
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-blue ingredients_list">
+                </ul>
             </form>
-            <!--Search appliance-->
-            <form class="search_tags_form" role="search">
+            <!--Search by appliances-->
+            <form class="search_tags_form search_tags_form-green" role="search">
                 <input type="search" max-length="75" id="appliances"
                     class="search_tags_form_input search_tags_form_input-green"
                     aria-label="Champ de recherche des appareils" name="appliances" placeholder="Appareils" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <datalist id="ingredients_datalist" class="search_tags_form_datalist">
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                    <option>Test</option>
-                </datalist>
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-green ingredients_list">
+                </ul>
             </form>
-            <!--Search ustensils-->
-            <form class="search_tags_form" role="search">
+            <!--Search by ustensils-->
+            <form class="search_tags_form search_tags_form-red" role="search">
                 <input type="search" max-length="75" id="ustensils"
                     class="search_tags_form_input search_tags_form_input-red"
                     aria-label="Champ de recherche des ustensiles" name="ustensils" placeholder="Ustensiles" />
                 <i class="fa-solid fa-chevron-down"></i>
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-red ingredients_list">
+                </ul>
             </form>
         </div>
     </nav>
