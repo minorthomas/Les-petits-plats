@@ -32,8 +32,6 @@ export const CreateRecipeCard = (recipes) => {
             }
         });
 
-
-
         //Appel de la variable recipesInDom et ajoute chaque recette dans la var
         recipesInDom += `
             <article id="recipe${recipe.id}" class="recipe_card">
@@ -62,4 +60,22 @@ export const CreateRecipeCard = (recipes) => {
     });
 
     recipeContainer.innerHTML = recipesInDom;
+}
+
+export const CreateListOfTags = (id, tagsList, tagType) => {
+    //Selectionne le container qui contiendra la liste des tags
+    const listContainer = document.querySelector(id);
+
+    let tagsInDom = ''; //Déclare une variable vide
+
+    //Boucle qui récupère chaque item du tableau de d'items
+    tagsList.forEach(tag => {
+        //Appel la var tagsInDom et ajoute chaque tag dedans
+        tagsInDom += `
+            <li role="option" tabindex="0" data-list="${tagType}" aria-label="${tag}">${tag}</li>
+        `
+
+        listContainer.innerHTML = tagsInDom;
+    });
+
 }

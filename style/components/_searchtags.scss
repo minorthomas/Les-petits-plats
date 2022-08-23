@@ -61,7 +61,6 @@
             justify-content: flex-start;
             align-items: center;
             width: 10em;
-            // width: 41.6em;
             height: 3.9em;
             border-radius: 0.3em;
             cursor: pointer;
@@ -121,21 +120,77 @@
                     cursor: pointer;
                     padding: 0.2em;
                 }
+
+                &::-webkit-scrollbar {
+                    width: 7px;
+                    padding: 1px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    padding: 1px;
+                    border-radius: 0 0 0.5em 0;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 4px;
+                }
+            }
+
+            .search_tags_form_tagslist-blue {
+
+                &::-webkit-scrollbar-track {
+                    background-color: $blue;
+                }
+
+                &::-webkit-scrollbar-thumb,
+                li[data-list="ingredientsTag"]:hover {
+                    background-color: $darkblue;
+                }
+            }
+
+            .search_tags_form_tagslist-green {
+
+                &::-webkit-scrollbar-track {
+                    background-color: $green;
+                }
+
+                &::-webkit-scrollbar-thumb,
+                li[data-list="appliancesTag"]:hover {
+                    background-color: $darkgreen;
+                }
+            }
+
+            .search_tags_form_tagslist-red {
+
+                &::-webkit-scrollbar-track {
+                    background-color: $red;
+                }
+
+                &::-webkit-scrollbar-thumb,
+                li[data-list="ustensilsTag"]:hover {
+                    background-color: $darkred;
+                }
             }
         }
+
+        .button_active {
+            width: 41.6em;
+
+            i {
+                transform: rotate(180deg);
+            }
+
+            ul {
+                display: grid !important;
+            }
+        }
+
+        /////////////////
 
         &_form-blue,
         .search_tags_form_input-blue,
         .search_tags_form_tagslist-blue {
             background-color: $blue;
-
-            &::-webkit-scrollbar-track {
-                background-color: $blue;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: rgb(0, 80, 172);
-            }
         }
 
 
@@ -143,14 +198,6 @@
         .search_tags_form_input-green,
         .search_tags_form_tagslist-green {
             background-color: $green;
-
-            &::-webkit-scrollbar-track {
-                background-color: $green;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: rgb(1, 138, 63);
-            }
         }
 
 
@@ -158,14 +205,6 @@
         .search_tags_form_input-red,
         .search_tags_form_tagslist-red {
             background-color: $red;
-
-            &::-webkit-scrollbar-track {
-                background-color: $red;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: rgb(148, 1, 1);
-            }
         }
     }
 }

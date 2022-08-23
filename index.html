@@ -61,30 +61,30 @@
         <!--Search with tags and user input-->
         <div class="search_tags">
             <!--Search by ingredients-->
-            <form class="search_tags_form search_tags_form-blue" role="search">
-                <input type="search" max-length="75" id="ingredients"
+            <form class="search_tags_form search_tags_form-blue" id="ingredients_dropdown" role="search">
+                <input type="search" max-length="75" id="ingredients_input"
                     class="search_tags_form_input search_tags_form_input-blue"
                     aria-label="Champ de recherche des ingrédients" name="ingredients" placeholder="Ingrédients" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="search_tags_form_tagslist search_tags_form_tagslist-blue ingredients_list">
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-blue" id="ingredients_list">
                 </ul>
             </form>
             <!--Search by appliances-->
-            <form class="search_tags_form search_tags_form-green" role="search">
-                <input type="search" max-length="75" id="appliances"
+            <form class="search_tags_form search_tags_form-green" id="appliances_dropdown" role="search">
+                <input type="search" max-length="75" id="appliances_input"
                     class="search_tags_form_input search_tags_form_input-green"
                     aria-label="Champ de recherche des appareils" name="appliances" placeholder="Appareils" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="search_tags_form_tagslist search_tags_form_tagslist-green ingredients_list">
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-green" id="appliances_list">
                 </ul>
             </form>
             <!--Search by ustensils-->
-            <form class="search_tags_form search_tags_form-red" role="search">
-                <input type="search" max-length="75" id="ustensils"
+            <form class="search_tags_form search_tags_form-red" id="ustensils_dropdown" role="search">
+                <input type="search" max-length="75" id="ustensils_input"
                     class="search_tags_form_input search_tags_form_input-red"
                     aria-label="Champ de recherche des ustensiles" name="ustensils" placeholder="Ustensiles" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="search_tags_form_tagslist search_tags_form_tagslist-red ingredients_list">
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-red" id="ustensils_list">
                 </ul>
             </form>
         </div>
