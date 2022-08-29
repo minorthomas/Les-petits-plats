@@ -128,7 +128,7 @@ export const updateTagsLists = (recipesArray) => {
 
 // DISPLAYS RECIPES
 
-export const DisplayRecipes = (RecipesArray) => {
+export const displayRecipes = (RecipesArray) => {
     const allRecipes = document.getElementsByTagName('article');
     for (let i = 0; i < recipes.length; i++) {
         let showRecipe = false;
