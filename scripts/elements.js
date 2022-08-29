@@ -12,25 +12,30 @@ export const CreateRecipeCard = (recipes) => {
 
         //Boucle qui cherche chaque ingrédient du tableau d'ingr de chaque recette
         ingredients.forEach(ingredient => {
+
+            let normalizeIngredient = ingredient.ingredient.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
             if (ingredient.quantity) { //Si on trouve quantité dans la tableau
                 if (ingredient.unit && ingredient.quantity) { //Si on trouve quantité et unité dans le tableau
                     //Affiche l'ingrédient, la quantité et l'unité
                     ingredientsInDom += `
-                        <li><strong>${ingredient.ingredient}: </strong>${ingredient.quantity} ${ingredient.unit}</li>
+                        <li><strong>${normalizeIngredient}: </strong>${ingredient.quantity} ${ingredient.unit}</li>
                     `;
                 } else { //Si on trouve juste quantity dans le tableau
                     //Affiche l'ingrédient et la quantité
                     ingredientsInDom += `
-                        <li><strong>${ingredient.ingredient}: </strong>${ingredient.quantity}</li>
+                        <li><strong>${normalizeIngredient}: </strong>${ingredient.quantity}</li>
                     `;
                 }
             } else { //Si on trouve ni de quantité ni d'unité dans le tableau
                 //Affiche uniquement l'ingrédient
                 ingredientsInDom += `
-                    <li><strong>${ingredient.ingredient}</strong></li>
+                    <li><strong>${normalizeIngredient}</strong></li>
                 `;
             }
         });
+
+        let normalizeDescription = recipe.description.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
         //Appel de la variable recipesInDom et ajoute chaque recette dans la var
         recipesInDom += `
@@ -51,7 +56,7 @@ export const CreateRecipeCard = (recipes) => {
                             </ul>
                         </div>
                         <p class="recipe_card_infos_details_instructions">
-                            ${recipe.description}
+                            ${normalizeDescription}
                         </p>
                     </div>
                 </div>
@@ -72,7 +77,7 @@ export const CreateListOfTags = (id, tagsList, tagType) => {
     tagsList.forEach(tag => {
         //Appel la var tagsInDom et ajoute chaque tag dedans
         tagsInDom += `
-            <li role="option" tabindex="0" data-list="${tagType}" aria-label="${tag}">${tag}</li>
+            <li class="tag" role="option" tabindex="0" data-list="${tagType}" aria-label="${tag}">${tag}</li>
         `
 
         listContainer.innerHTML = tagsInDom;
