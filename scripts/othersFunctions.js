@@ -37,7 +37,8 @@ export const inputSearchTagList = (category, categoryListId) => {
 //fonction display un message d'erreur si aucune recette ne correspond
 export const recipeNotFound = () => {
     const recipeContainer = document.querySelector('.recipe');
-    recipeContainer.insertAdjacentHTML("afterbegin", `<div id="recipe_error">Désolé, aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson ».</div>`);
+    recipeContainer.insertAdjacentHTML("afterbegin", `<div id="recipe_error">Aucune recette ne correspond à votre critère… vous pouvez
+    chercher « tarte aux pommes », « poisson », etc.</div>`);
 };
 
 //fonction display un message d'erreur si aucun tag ne correspond
@@ -130,6 +131,7 @@ export const updateTagsLists = (recipesArray) => {
 
 export const displayRecipes = (RecipesArray) => {
     const allRecipes = document.getElementsByTagName('article');
+
     for (let i = 0; i < recipes.length; i++) {
         let showRecipe = false;
         RecipesArray.forEach((item) => {

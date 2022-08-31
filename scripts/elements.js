@@ -84,3 +84,24 @@ export const CreateListOfTags = (id, tagsList, tagType) => {
     });
 
 }
+
+export const CreateTags = (tagSelected, tagType) => {
+    const tagsContainer = document.querySelector('.search_selectedtags');
+
+    let bgColor;
+
+    switch (tagType) {
+        case 'ingredientsTag': bgColor = 'blue'; break;
+        case 'appliancesTag': bgColor = 'green'; break;
+        case 'ustensilsTag': bgColor = 'red'; break;
+        default: console.log('no color set');
+    };
+
+    tagsContainer.insertAdjacentHTML("afterbegin", `
+            <li class="search_selectedtags_tag search_selectedtags_tag-${bgColor}">
+                <p>${tagSelected}</p>
+                <i class="fa-regular fa-circle-xmark fa-lg"></i>
+            </li>
+        `
+    );
+};
