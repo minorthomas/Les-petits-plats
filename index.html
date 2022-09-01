@@ -40,7 +40,7 @@
         <!--Search with user input-->
         <form class="search_form" role="search">
             <input type="search" id="searchbar" class="search_form_input" aria-label="Champ de recherche des recettes"
-                max-length="255" placeholder="Rechercher une recette" />
+                placeholder="Rechercher une recette" />
             <i class="fa-solid fa-magnifying-glass"></i>
         </form>
         <!--Selected tags display here-->
@@ -51,29 +51,28 @@
         <div class="search_tags">
             <!--Search by ingredients-->
             <form class="search_tags_form search_tags_form-blue" id="ingredients_dropdown" role="search">
-                <input type="search" max-length="75" id="ingredients_input"
-                    class="search_tags_form_input search_tags_form_input-blue"
+                <input type="search" id="ingredients_input" class="search_tags_form_input search_tags_form_input-blue"
                     aria-label="Champ de recherche des ingrédients" name="ingredients" placeholder="Ingrédients" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="search_tags_form_tagslist search_tags_form_tagslist-blue" id="ingredients_list">
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-blue" role="listbox"
+                    id="ingredients_list">
                 </ul>
             </form>
             <!--Search by appliances-->
             <form class="search_tags_form search_tags_form-green" id="appliances_dropdown" role="search">
-                <input type="search" max-length="75" id="appliances_input"
-                    class="search_tags_form_input search_tags_form_input-green"
+                <input type="search" id="appliances_input" class="search_tags_form_input search_tags_form_input-green"
                     aria-label="Champ de recherche des appareils" name="appliances" placeholder="Appareils" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="search_tags_form_tagslist search_tags_form_tagslist-green" id="appliances_list">
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-green" role="listbox"
+                    id="appliances_list">
                 </ul>
             </form>
             <!--Search by ustensils-->
             <form class="search_tags_form search_tags_form-red" id="ustensils_dropdown" role="search">
-                <input type="search" max-length="75" id="ustensils_input"
-                    class="search_tags_form_input search_tags_form_input-red"
+                <input type="search" id="ustensils_input" class="search_tags_form_input search_tags_form_input-red"
                     aria-label="Champ de recherche des ustensiles" name="ustensils" placeholder="Ustensiles" />
                 <i class="fa-solid fa-chevron-down"></i>
-                <ul class="search_tags_form_tagslist search_tags_form_tagslist-red" id="ustensils_list">
+                <ul class="search_tags_form_tagslist search_tags_form_tagslist-red" role="listbox" id="ustensils_list">
                 </ul>
             </form>
         </div>
@@ -81,8 +80,10 @@
     <main class="recipe">
         <!--Display recipes cards here-->
     </main>
+
+    <script type="module" src="scripts/main.js"></script>
 </body>
 
-<script type="module" src="scripts/main.js"></script>
+
 
 </html>

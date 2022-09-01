@@ -98,7 +98,6 @@ const dropDownFilters = () => {
         btn.addEventListener('click', (event) => {
             event.preventDefault();
 
-            //retire par défaut la class "button_active" sur tous les boutons
             filterButtons.forEach((btn) => {
                 btn.classList.remove('button_active');
             });
@@ -188,8 +187,7 @@ tagsList.forEach((item) => {
     });
 });
 
-/*recherche input principal
-******************************************/
+//recherche input principal
 
 const searchNavigationInput = document.querySelector('#searchbar');
 let sortedrecipesLeftArray = [];
