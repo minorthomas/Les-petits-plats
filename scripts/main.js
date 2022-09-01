@@ -205,26 +205,24 @@ searchNavigationInput.addEventListener("input", (event) => {
         //speedtest start
         console.time();
 
-        recipes.forEach((recipe) => {
-            let NormalizedRecipeName = normalize(recipe.name);
-            let NormalizedDescription = normalize(recipe.description);
+        for (let i = 0; i < recipes.length; i++) {
+            let NonNormalizedName = recipes[i].name;
+            let NormalizedName = normalize(NonNormalizedName);
 
-            if (NormalizedRecipeName.includes(NormalizedInput) || NormalizedDescription.includes(NormalizedInput)) {
-                recipesLeftArray.push(recipe);
+            let NonNormalizedDescription = recipes[i].description;
+            let NormalizedDescription = normalize(NonNormalizedDescription);
+
+            if (NormalizedName.includes(NormalizedInput) || NormalizedDescription.includes(NormalizedInput)) {
+                recipesLeftArray.push(recipes[i]);
             } else {
-                recipe.ingredients.forEach((item) => {
-                    let NormalizedIngredient = normalize(item.ingredient);
+                for (let ingr = 0; ingr < recipes[i].ingredients.length; ingr++) {
+                    let NonNormalizedIngredient = recipes[i].ingredients[ingr].ingredient;
+                    let NormalizedIngredient = normalize(NonNormalizedIngredient);
                     if (NormalizedIngredient.includes(NormalizedInput)) {
-                        recipesLeftArray.push(recipe);
+                        recipesLeftArray.push(recipes[i]);
                     }
-                });
+                }
             }
-            //speedtest end    
-            console.timeEnd();
-        });
-
-        if (recipesLeftArray.length < 1) {
-            recipeNotFound();
         }
 
         sortedrecipesLeftArray = [...new Set(recipesLeftArray)];
