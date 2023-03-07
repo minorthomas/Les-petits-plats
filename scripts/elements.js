@@ -1,43 +1,37 @@
+/**
+ *
+ * @param {Array} recipes
+ */
 export const CreateRecipeCard = (recipes) => {
-    //Selectionne le container contiendra les recettes
     const recipeContainer = document.querySelector(".recipe");
-
-    let recipesInDom = ''; //Déclare une variable vide
-
-    //Boucle qui cherche chaque recette
-    recipes.forEach(recipe => {
-        let ingredientsInDom = '';//Déclare une variable vide
-
-        const { ingredients } = recipe; //Récupère les ingredients de chaque recette
-
-        //Boucle qui cherche chaque ingrédient du tableau d'ingr de chaque recette
-        ingredients.forEach(ingredient => {
-
-            let normalizeIngredient = ingredient.ingredient.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-            if (ingredient.quantity) { //Si on trouve quantité dans la tableau
-                if (ingredient.unit && ingredient.quantity) { //Si on trouve quantité et unité dans le tableau
-                    //Affiche l'ingrédient, la quantité et l'unité
+    let recipesInDom = "";
+    recipes.forEach((recipe) => {
+        let ingredientsInDom = "";
+        const { ingredients } = recipe;
+        ingredients.forEach((ingredient) => {
+            let normalizeIngredient = ingredient.ingredient
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "");
+            if (ingredient.quantity) {
+                if (ingredient.unit && ingredient.quantity) {
                     ingredientsInDom += `
                         <li><strong>${normalizeIngredient}: </strong>${ingredient.quantity} ${ingredient.unit}</li>
                     `;
-                } else { //Si on trouve juste quantity dans le tableau
-                    //Affiche l'ingrédient et la quantité
+                } else {
                     ingredientsInDom += `
                         <li><strong>${normalizeIngredient}: </strong>${ingredient.quantity}</li>
                     `;
                 }
-            } else { //Si on trouve ni de quantité ni d'unité dans le tableau
-                //Affiche uniquement l'ingrédient
+            } else {
                 ingredientsInDom += `
                     <li><strong>${normalizeIngredient}</strong></li>
                 `;
             }
         });
 
-        let normalizeDescription = recipe.description.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-        //Appel de la variable recipesInDom et ajoute chaque recette dans la var
+        let normalizeDescription = recipe.description
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
         recipesInDom += `
             <article id="recipe${recipe.id}" class="recipe_card">
                 <div class="recipe_card_image"></div>
@@ -61,43 +55,50 @@ export const CreateRecipeCard = (recipes) => {
                     </div>
                 </div>
             </article>
-        `
+        `;
     });
 
     recipeContainer.innerHTML = recipesInDom;
-}
+};
 
+/**
+ *
+ * @param {String} id
+ * @param {Array} tagsList
+ * @param {String} tagType
+ */
 export const CreateListOfTags = (id, tagsList, tagType) => {
-    //Selectionne le container qui contiendra la liste des tags
     const listContainer = document.querySelector(id);
-
-    let tagsInDom = ''; //Déclare une variable vide
-
-    //Boucle qui récupère chaque item du tableau de d'items
-    tagsList.forEach(tag => {
-        //Appel la var tagsInDom et ajoute chaque tag dedans
+    let tagsInDom = "";
+    tagsList.forEach((tag) => {
         tagsInDom += `
             <li class="tag" role="option" tabindex="0" data-list="${tagType}" aria-label="${tag}">${tag}</li>
-        `
+        `;
 
         listContainer.innerHTML = tagsInDom;
     });
+};
 
-}
-
+/**
+ * 
+ * @param {String} tagSelected 
+ * @param {String} tagType 
+ */
 export const CreateTags = (tagSelected, tagType) => {
-    const tagsContainer = document.querySelector('.search_selectedtags');
-
+    const tagsContainer = document.querySelector(".search_selectedtags");
     let bgColor;
-
-    switch (tagType) {
-        case 'ingredientsTag': bgColor = 'blue'; break;
-        case 'appliancesTag': bgColor = 'green'; break;
-        case 'ustensilsTag': bgColor = 'red'; break;
-        default: console.log('no color set');
-    };
-
-    tagsContainer.insertAdjacentHTML("afterbegin", `
+    if (tagType === 'ingredientsTag') {
+        bgColor = "blue";
+    } else if (tagType === 'appliancesTag') {
+        bgColor = "green";
+    } else if (tagType === 'ustensilsTag') {
+        bgColor = "red";
+    } else {
+        console.log("no color set");
+    }
+    tagsContainer.insertAdjacentHTML(
+        "afterbegin",
+        `
             <li class="search_selectedtags_tag search_selectedtags_tag-${bgColor}">
                 <p>${tagSelected}</p>
                 <i class="fa-regular fa-circle-xmark fa-lg"></i>
