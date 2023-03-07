@@ -1,6 +1,10 @@
-//importation des recettes depuis le dossier data
 import { recipes } from "../data/recipes.js";
 
+/**
+ * 
+ * @param {String} text 
+ * @returns 
+ */
 export const normalize = (text) => {
     return text
         .normalize('NFD')
@@ -8,16 +12,12 @@ export const normalize = (text) => {
         .toLowerCase();
 };
 
-//fonction de recherche par input pour les tags
 export const inputSearchTagList = (category, categoryListId) => {
     const filter = document.getElementById(category);
-
-    //Chaque entrée utilisateur appel la fonction de filtres
     filter.addEventListener("keyup", function () {
         FilterFunction();
     });
 
-    //cherche si l'input utilisateur match avec un tag
     const FilterFunction = () => {
         const input = document.getElementById(category);
         const inputValue = input.value.toUpperCase().trim();
@@ -34,14 +34,16 @@ export const inputSearchTagList = (category, categoryListId) => {
     }
 };
 
-//fonction display un message d'erreur si aucune recette ne correspond
 export const recipeNotFound = () => {
     const recipeContainer = document.querySelector('.recipe');
     recipeContainer.insertAdjacentHTML("afterbegin", `<div id="recipe_error">Aucune recette ne correspond à votre critère… vous pouvez
     chercher « tarte aux pommes », « poisson », etc.</div>`);
 };
 
-//fonction display un message d'erreur si aucun tag ne correspond
+/**
+ * 
+ * @param {String} id 
+ */
 const tagNotFound = (id) => {
     const dropdownList = document.querySelector(id);
     switch (id) {
@@ -52,7 +54,6 @@ const tagNotFound = (id) => {
     };
 }
 
-//fonction vérifie si il n'y a plus de tag dispo, si oui affiche le message d'err
 const isTagLeft = () => {
     let tagNotFoundMessage = document.querySelectorAll('.search_tags_form_tagslist_error');
     if (tagNotFoundMessage) {
@@ -97,7 +98,10 @@ const RemoveDuplicatesTags = () => {
     isTagLeft();
 };
 
-
+/**
+ * 
+ * @param {Array} recipesArray 
+ */
 export const updateTagsLists = (recipesArray) => {
     const tagList = document.querySelectorAll('.tag');
     tagList.forEach((item) => {
@@ -127,8 +131,10 @@ export const updateTagsLists = (recipesArray) => {
     RemoveDuplicatesTags();
 };
 
-// DISPLAYS RECIPES
-
+/**
+ * 
+ * @param {Array} RecipesArray 
+ */
 export const displayRecipes = (RecipesArray) => {
     const allRecipes = document.getElementsByTagName('article');
 
