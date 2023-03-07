@@ -177,6 +177,9 @@ tagsList.forEach((item) => {
 const searchNavigationInput = document.querySelector("#searchbar");
 let sortedrecipesLeftArray = [];
 
+/**
+ * ALGORITHME
+ */
 searchNavigationInput.addEventListener("input", (event) => {
     let recipesLeftArray = [];
     let NormalizedInput = normalize(event.target.value.trim());
@@ -232,6 +235,10 @@ searchNavigationInput.addEventListener("input", (event) => {
         filterRecipes(tagListArray, sortedrecipesLeftArray);
     }
 });
+
+/**
+ * FIN ALGORITHME
+ */
 
 /**
  * 
